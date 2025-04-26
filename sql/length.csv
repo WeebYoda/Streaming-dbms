@@ -1,0 +1,5 @@
+lengthID,lengthCategory
+1,Short (< 1 hour)
+2,Feature (1-2 hours)
+3,Long (> 2 hours)
+4,Epic (160+ min)

@@ -1,0 +1,5 @@
+101,"Test Movie",2022,"A movie used for testing database loads.",2,2,"PG"
+102,"Data Loader",2001,"Will the data load successfully?",3,3,"PG"
+103,"Numbers",2000,"1, 2, 3 yo",4,1,"R"
+104,"Yell",1999,"GRAAAH",1,2,"PG-13"
+105,"Mystery",NULL,"",2,2,"NO RATING"
