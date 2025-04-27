@@ -7,13 +7,14 @@ $rating = $_GET['rating'] ?? '';
 $length = $_GET['length'] ?? '';
 
 $query = "
-    SELECT f.title, g.genreName, r.ratingID, l.lengthCategory, f.releaseYear
+    SELECT f.filmID, f.title, f.filmDescription, g.genreName, r.ratingID, l.lengthCategory, f.releaseYear
     FROM Film f
     JOIN Genre g ON f.genreID = g.genreID
     JOIN Rating r ON f.ratingID = r.ratingID
     JOIN Length l ON f.lengthID = l.lengthID
     WHERE f.title LIKE :name
 ";
+
 
 $params = [':name' => "%$name%"];
 

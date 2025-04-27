@@ -1,0 +1,105 @@
+/* Background and Base */
+body {
+    font-family: 'Verdana', sans-serif;
+    background: linear-gradient(to bottom, #d9e4f5, #ffffff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #003366;
+    text-shadow: 2px 2px 5px #ccc;
+    margin-bottom: 30px;
+}
+
+/* Search Filters */
+.search-bar {
+    background: #cce0ff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.search-bar label {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Movie Cards Grid */
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Movie Card */
+.movie {
+    background: linear-gradient(to top, #ffffff, #e6f0ff);
+    border: 2px solid #6699cc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.movie:hover {
+    box-shadow: 0 0 15px 5px #66ccff, 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+
+.movie h3 {
+    font-size: 24px;
+    color: #003366;
+    margin-top: 0;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-right: 8px;
+    background: linear-gradient(to bottom, #4da6ff, #0059b3);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(to bottom, #66c2ff, #0073e6);
+}
+
+/* Special Delete Button */
+.delete-button {
+    background: linear-gradient(to bottom, #ff6666, #cc0000);
+}
+
+.delete-button:hover {
+    background: linear-gradient(to bottom, #ff9999, #ff3333);
+}
+
+/* Form Inputs */
+input[type="text"], input[type="number"], textarea, select {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: block;
+    border: 2px solid #6699cc;
+    border-radius: 5px;
+    background: #f0f8ff;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
