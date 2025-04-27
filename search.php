@@ -1,42 +1,53 @@
 <?php
 require 'db.php';
 
+// Collect parameters
 $name = $_GET['name'] ?? '';
 $genre = $_GET['genre'] ?? '';
 $rating = $_GET['rating'] ?? '';
 $length = $_GET['length'] ?? '';
 
+// Build base query
 $query = "
     SELECT f.filmID, f.title, f.filmDescription, g.genreName, r.ratingID, l.lengthCategory, f.releaseYear
     FROM Film f
     JOIN Genre g ON f.genreID = g.genreID
     JOIN Rating r ON f.ratingID = r.ratingID
     JOIN Length l ON f.lengthID = l.lengthID
-    WHERE f.title LIKE :name
+    WHERE 1
 ";
 
+// Dynamic filters
+$params = [];
 
-$params = [':name' => "%$name%"];
-
-if ($genre !== '') {
-    $query .= " AND g.genreName = :genre";
-    $params[':genre'] = $genre;
+if (!empty($name)) {
+    $query .= " AND f.title LIKE :name";
+    $params[':name'] = "%$name%";
 }
-if ($rating !== '') {
+
+if (!empty($genre)) {
+    $query .= " AND g.genreName LIKE :genre";
+    $params[':genre'] = "%$genre%";
+}
+
+
+if (!empty($rating)) {
     $query .= " AND r.ratingID = :rating";
     $params[':rating'] = $rating;
 }
-if ($length !== '') {
-    $query .= " AND l.lengthCategory = :length";
-    $params[':length'] = $length;
+
+if (!empty($length)) {
+    $query .= " AND l.lengthCategory LIKE :length";
+    $params[':length'] = "%$length%";
 }
 
-try {
-    $stmt = $pdo->prepare($query);
-    $stmt->execute($params);
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($results);
-} catch (PDOException $e) {
-    echo json_encode(['error' => $e->getMessage()]);
-}
+// Prepare and execute
+$stmt = $pdo->prepare($query);
+$stmt->execute($params);
+
+$movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Output as JSON
+header('Content-Type: application/json');
+echo json_encode($movies);
 ?>

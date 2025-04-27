@@ -31,6 +31,8 @@
             <option value="Drama">Drama</option>
         </select>
     </label>
+    
+    </label>
 
     <label>Search by Rating:
         <select id="search-rating" onchange="filterMovies()">
@@ -46,11 +48,12 @@
     <label>Search by Length:
         <select id="search-length" onchange="filterMovies()">
             <option value="">All</option>
-            <option value="Short">Short(30-50 min)</option>
-            <option value="Feature">Feature (60-120 min)</option>
-            <option value="Long">Long (160+ min)</option>>
+            <option value="Short (< 1 hour)">Short (&lt; 1 hour)</option>
+            <option value="Feature (1-2 hours)">Feature (1-2 hours)</option>
+            <option value="Long (> 2 hours)">Long (&gt; 2 hours)</option>
         </select>
     </label>
+    
 </div>
 
 <!-- Movie List Section -->
