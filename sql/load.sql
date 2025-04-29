@@ -8,14 +8,14 @@ INSERT INTO Rating (ratingID) VALUES
 INSERT INTO Length (lengthID, lengthCategory) VALUES
 (1, 'Short'),
 (2, 'Feature'),
-(3, 'Long'),
+(3, 'Long');
 
 -- Insert Genres
 INSERT INTO Genre (genreID, genreName) VALUES
 (1, 'Action'),
 (2, 'Comedy'),
 (3, 'Sci-Fi'),
-(4, 'Drama'),
+(4, 'Drama');
 
 -- Insert Some Sample Films
 INSERT INTO Film (title, releaseYear, filmDescription, genreID, lengthID, ratingID) VALUES
